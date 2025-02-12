@@ -1,0 +1,11 @@
+2. Identifying Users Likely to Rewatch Movies Based on Genre Preferences (Logistic Regression).
+8. Predicting Suspense/Ending Preferences in Movies (Using logistic Regression)
+11. Detecting Movie’s Popularity Based on View Count
+9. Predicting User's Movie Viewing Frequency Based on Genre Interests and Demographics (Using Random Forest)
+12. Predict how much time a user will spend watching movies daily based on their past habits (using Random Forest).
+6. Predicting Users’ Preference for Movies Based on Books (Classification)(naive Bayes)
+7. Detecting Happy Ending Preference Based on Movie Genre and Viewing Habits (Classification)(naive Bayes)
+3. Cluster users into categories like "Casual Watcher," "Movie Enthusiast,", “Weekend Binger”, "Classic and Documentary Lover", “New Release Fanatic” based on their movie habits. (Clustering).
+4.Description: Group users based on their engagement levels (likes, shares, comments) to identify highly interactive users, passive viewers, and silent movie fans. (Clustering)
+1. Movie Genre Recommendation System Using Multiple Regression and K-Nearest Neighbors (KNN)
+dicuss all the problem statement with their solving approach

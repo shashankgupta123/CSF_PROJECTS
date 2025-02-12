@@ -13,25 +13,31 @@ function EncryptPage() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!selectedFile) {
       toast.error("Please select a file.");
       return;
     }
-
+  
     const formData = new FormData();
     formData.append("file", selectedFile);
-    formData.append("email", userEmail);
-    formData.append("token", userToken); // Send the token along with the email and file
-
+    formData.append("email", userEmail); // Send email in formData
+  
+    const token = localStorage.getItem("token"); // Fetch token from localStorage
+  
+    console.log("Sending token:", token); // Debug log
+  
     try {
       const response = await fetch("http://127.0.0.1:5000/encrypt", {
         method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`, // Correct way to send JWT token
+        },
         body: formData,
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         toast.success(data.message);
       } else {
@@ -41,6 +47,7 @@ function EncryptPage() {
       toast.error("An error occurred while processing the file.");
     }
   };
+  
 
   return (
     <div className="EncryptPage">

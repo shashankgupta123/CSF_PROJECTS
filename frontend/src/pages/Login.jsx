@@ -3,7 +3,7 @@ import "../assets/css/login.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Col, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link
 import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
 
@@ -29,32 +29,35 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/save_user", {
+      const response = await fetch("http://127.0.0.1:5000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(user),
       });
+
       if (response.ok) {
         const data = await response.json();
         console.log(data.message);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", user.email);
 
         if (data.message === "User already exists, no need to save.") {
-          toast.info("User already registered. Redirecting..."); // Show info toast
-          navigate("/locations");
+          toast.info("User already registered. Redirecting...");
+          navigate("/register");
         } else {
-          toast.success("User saved successfully! Redirecting..."); // Show success toast
-          navigate("/locations");
+          toast.success("User saved successfully! Redirecting...");
+          navigate("/encrypt");
         }
       } else {
         const error = await response.json();
         console.error(error);
-        toast.error("Failed to save user details. Please try again."); // Show error toast
+        toast.error("Failed to save user details. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      toast.error("An error occurred while saving user details. Please try again."); // Show error toast
+      toast.error("An error occurred while saving user details. Please try again.");
     }
   };
 
@@ -68,7 +71,7 @@ const Login = () => {
           <Row className="loginContainer m-0 p-0">
             <Col md={4}>
               <div className="logininnerContainer">
-                <h1>Welcome To Google Integration Portal</h1>
+                <h1>Welcome To File Encryption System</h1>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -78,6 +81,7 @@ const Login = () => {
                       value={user.email}
                       onChange={handleInput}
                       placeholder="Enter email"
+                      required
                     />
                   </Form.Group>
 
@@ -89,10 +93,17 @@ const Login = () => {
                       value={user.password}
                       onChange={handleInput}
                       placeholder="Password"
+                      required
                     />
                   </Form.Group>
 
                   <Button type="submit">Submit</Button>
+
+                  {/* Link to registration page */}
+                  <p className="registerRedirect">
+                    Don't have an account? <Link to="/">Create one here</Link>
+                  </p>
+
                 </Form>
               </div>
             </Col>

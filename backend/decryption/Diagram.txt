@@ -1,0 +1,47 @@
+Here are 2-3 insights you can derive from your dataset before even plotting the graphs:
+
+1️⃣ Age vs. Movie Preferences:
+Younger users (e.g., 18-year-old) prefer horror movies less but are more open to sci-fi.
+Older users (58+ years) tend to like true story-based and happy-ending movies more.
+2️⃣ Rewatch Frequency vs. Age:
+The highest rewatch frequency (19 times) belongs to a 36-year-old user, which suggests that mid-age users might have a higher tendency to rewatch their favorite movies.
+The youngest user (18 years) has rewatched their favorite movie only 3 times, indicating that younger viewers may prefer new content over rewatching.
+3️⃣ Engagement Metrics (Likes, Shares, Comments) vs. View Count:
+The user with highest view count (481) has low shares (15) and likes (165), which might mean they watch a lot but don't engage much.
+The user with the lowest view count (7) still has shares = 7, showing some people engage more despite watching fewer movies.
+Would you like more hidden patterns based on correlations? 🚀
+
+
+
+
+
+
+You said:
+Here are 3 key insights from the Age Histogram:
+
+1️⃣ Younger and Older Age Groups Dominate
+The highest frequency is observed in the 18-22 age range and 70+ age range, suggesting that a lot of users in the dataset are either young adults or seniors.
+2️⃣ Mid-Age Users (30-40) Are Less Frequent
+There are fewer users in the 30-40 age group, which might indicate that people in this age range are either too busy or less engaged in movie-watching.
+3️⃣ Balanced Distribution Between 45-65
+Users aged 45 to 65 are relatively evenly distributed, meaning middle-aged people have a steady presence in movie-watching habits.
+
+
+
+Here are 3 key insights from the Gender Pie Chart:
+
+1️⃣ Almost Equal Distribution of Genders
+The dataset has 51.5% (103 users) from one gender and 48.5% (97 users) from the other, indicating a nearly balanced representation.
+2️⃣ Slight Majority for Gender 1
+The group labeled as "1" has a slightly higher count than the group labeled as "0", meaning this gender group might have a slightly stronger presence in movie-watching habits.
+3️⃣ No Major Gender Bias in Data Collection
+Since the split is close to 50-50, the dataset does not show significant bias toward any gender, ensuring more generalized insights when analyzing movie preferences.
+
+
+
+1️⃣ Most Users Watch 1 to 5 Movies per Week
+The highest frequency is observed for 1, 2, 3, 4, and 5 movies per week, suggesting that the majority of users fall into moderate movie-watching habits.
+2️⃣ Fewer Users Watch 6 or More Movies Weekly
+The frequency drops significantly at 6 movies per week, meaning only a small group of users are heavy movie watchers.
+3️⃣ Peaks at 1, 2, and 5 Movies per Week
+1, 2, and 5 movies per week show the highest counts, possibly indicating casual watchers (1-2 movies) and dedicated movie lovers (5 movies).

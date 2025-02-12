@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../assets/css/login.css";
+import "../assets/css/register.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Col, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const Register = () => {
@@ -22,31 +22,35 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!user.password) {
       alert("Please enter a password to continue.");
       return;
     }
-
+  
     try {
       const response = await fetch("http://127.0.0.1:5000/api/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",  // 🔥 Fix CORS issues
         body: JSON.stringify(user),
       });
-
+  
+      const data = await response.json(); // Ensure JSON response
       if (response.ok) {
         alert("Registration successful! Please login.");
         navigate("/login");
       } else {
-        const error = await response.json();
-        alert(error.error || "Failed to register.");
+        alert(data.error || "Failed to register.");
       }
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred during registration.");
     }
   };
+  
 
   return (
     <>
@@ -97,6 +101,12 @@ const Register = () => {
                   </Form.Group>
 
                   <Button type="submit">Register</Button>
+
+                  {/* Link to login page */}
+                  <p className="loginRedirect">
+                    Already have an account? <Link to="/login">Login here</Link>
+                  </p>
+
                 </Form>
               </div>
             </Col>

@@ -16,8 +16,8 @@ function DecryptPage() {
     e.preventDefault();
 
     if (!selectedFile) {
-      toast.error("Please select a file.");
-      return;
+        toast.error("Please select a file.");
+        return;
     }
 
     const formData = new FormData();
@@ -26,22 +26,32 @@ function DecryptPage() {
     formData.append("token", token);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/decrypt", {
-        method: "POST",
-        body: formData,
-      });
+        const response = await fetch("http://127.0.0.1:5000/decrypt", {
+            method: "POST",
+            body: formData,  // Don't set headers for FormData
+        });
 
-      const data = await response.json();
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || "Decryption failed.");
+        }
 
-      if (response.ok) {
-        toast.success(data.message);
-      } else {
-        toast.error(data.error || "An error occurred.");
-      }
+        // Convert response to file and download
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = selectedFile.name.replace(".enc", ""); // Adjust filename as needed
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        toast.success("File decrypted successfully!");
     } catch (error) {
-      toast.error("An error occurred while processing the file.");
+        toast.error(error.message);
     }
-  };
+};
+
 
   const handleSendEmail = async () => {
     try {

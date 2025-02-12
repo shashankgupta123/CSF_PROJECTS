@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-.loginBG {
+.registerBG {
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-.loginContainer {
+.registerContainer {
     width: 100%;
     height: auto;
     display: flex;
@@ -22,7 +22,7 @@
     padding: 2rem 0;
 }
 
-.logininnerContainer {
+.registerInnerContainer {
     width: 90%;
     max-width: 450px;
     padding: 2rem;
@@ -49,7 +49,7 @@
     }
 }
 
-.logininnerContainer h1 {
+.registerInnerContainer h1 {
     font-family: 'Permanent Marker', cursive;
     color: #39A2AE;
     font-size: 2.5rem;
@@ -59,10 +59,10 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Updated input fields */
-.logininnerContainer input {
-    height: 45px; /* Increased height */
-    width: 100%; /* Full width */
+/* Input Fields */
+.registerInnerContainer input {
+    height: 45px;
+    width: 100%;
     font-size: 16px;
     padding: 10px;
     margin-bottom: 1rem;
@@ -71,19 +71,19 @@
     transition: all 0.3s ease-in-out;
 }
 
-.logininnerContainer input:focus {
+.registerInnerContainer input:focus {
     border-color: #39A2AE;
     outline: none;
     box-shadow: 0px 0px 8px rgba(57, 162, 174, 0.5);
 }
 
-/* Updated button styling */
-.logininnerContainer button {
+/* Button Styling */
+.registerInnerContainer button {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     background-color: #202020;
     color: #fff;
-    padding: 14px 35px; /* Increased padding */
+    padding: 14px 35px;
     font-size: 16px;
     border: none;
     border-radius: 0.5rem;
@@ -95,56 +95,56 @@
     width: 100%;
 }
 
-.logininnerContainer button:hover {
+.registerInnerContainer button:hover {
     background-color: #505050;
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Register Link */
-.logininnerContainer p {
+/* Login Redirect Link */
+.registerInnerContainer p {
     margin-top: 1rem;
     font-size: 14px;
 }
 
-.logininnerContainer a {
+.registerInnerContainer a {
     color: #39A2AE;
     text-decoration: none;
     font-weight: bold;
 }
 
-.logininnerContainer a:hover {
+.registerInnerContainer a:hover {
     text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .logininnerContainer {
+    .registerInnerContainer {
         padding: 1.5rem;
         width: 90%;
         max-width: 380px;
     }
 
-    .logininnerContainer h1 {
+    .registerInnerContainer h1 {
         font-size: 2rem;
     }
 
-    .logininnerContainer button {
+    .registerInnerContainer button {
         font-size: 16px;
         padding: 12px 30px;
     }
 }
 
 @media (max-width: 480px) {
-    .logininnerContainer {
+    .registerInnerContainer {
         padding: 1rem;
     }
 
-    .logininnerContainer h1 {
+    .registerInnerContainer h1 {
         font-size: 1.8rem;
     }
 
-    .logininnerContainer button {
+    .registerInnerContainer button {
         font-size: 14px;
         padding: 10px 25px;
     }
