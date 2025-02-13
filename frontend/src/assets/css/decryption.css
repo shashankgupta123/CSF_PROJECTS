@@ -1,0 +1,109 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Decrypt Page Container */
+.decrypt-page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a202c; /* Dark background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Page Title */
+.decrypt-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.decrypt-input-container input {
+    width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #2d3748;
+    color: white;
+    text-align: center;
+}
+
+.decrypt-input-container input::placeholder {
+    color: #a0aec0;
+}
+
+/* Hide file input until verified */
+.decrypt-input-container.hidden {
+    display: none;
+}
+
+/* Buttons */
+.decrypt-button {
+    width: 320px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #3182ce;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.decrypt-button:hover {
+    background-color: #2b6cb0;
+    transform: scale(1.08);
+}
+
+.decrypt-button:disabled {
+    background-color: #4a5568;
+    cursor: not-allowed;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #c53030;
+    transform: scale(1.05);
+}
+
+/* Toast Notifications */
+.Toastify__toast-container {
+    top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .decrypt-page h1 {
+        font-size: 2.5rem;
+    }
+
+    .decrypt-input-container input,
+    .decrypt-button {
+        width: 90%;
+    }
+}

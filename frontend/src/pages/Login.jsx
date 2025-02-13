@@ -48,7 +48,7 @@ const Login = () => {
           navigate("/register");
         } else {
           toast.success("User saved successfully! Redirecting...");
-          navigate("/encrypt");
+          navigate("/home");
         }
       } else {
         const error = await response.json();
